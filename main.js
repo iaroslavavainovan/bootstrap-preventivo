@@ -34,8 +34,9 @@ const backendDevelopPerHour = 20.50;
 const frontendDevelopPerHour = 15.30;
 const projectAnalysisPerHour = 33.60;
 
-// salvare in un array i codici sconto che il cliente potrebbe utilizzare
+// salvare in un array i codici sconto che il cliente potrebbe utilizzare + costante sconto 25%
 let promotionalCodes = ['YHDNU32','JANJC63','PWKCN25','SJDPO96','POCIE24'];
+const promotion = 0.75 //sconto 25%
 
 //salvare in una costante l'elemento form con id estimateRequest da utilizzare nella funzione
 const estimateRequestElement = document.getElementById('estimateRequest');
@@ -45,7 +46,7 @@ estimateRequestElement.addEventListener('submit', function(event) {
     event.preventDefault(); //blocca refresh continuo della pagina
     let selectedInputWork = parseInt(workElement.value);
     const discount = (promotionalCodesElement.value).toUpperCase();
-
+    //VERIFICA
     console.log(selectedInputWork, discount);
 
     if(selectedInputWork === 1){
@@ -57,8 +58,16 @@ estimateRequestElement.addEventListener('submit', function(event) {
     else if (selectedInputWork === 3) {
         selectedInputWork = (projectAnalysisPerHour * timePerProject).toFixed(2);
     }
-        
+    //VERIFICA 
     console.log(selectedInputWork);
+
+    if(promotionalCodes.includes(discount)){
+        selectedInputWork = (selectedInputWork * promotion).toFixed(2);
+    }
+    //VERIFICA 
+    console.log(selectedInputWork);
+
+
 
 }
 )
