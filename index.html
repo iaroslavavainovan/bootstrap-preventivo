@@ -52,7 +52,7 @@
                             nostri servizi di sviluppo
                         </p>
                         <!-- FORM -->
-                        <form>
+                        <form id="estimateRequest">
                             <div class="mb-3">
                                 <label for="nome"
                                     class="form-label">Nome</label>
@@ -72,8 +72,8 @@
                                     id="email" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="tipoDiLavoro">Tipo di lavoro</label>
-                                <select class="form-select" id="tipoDiLavoro">
+                                <label for="inputWork">Tipo di lavoro</label>
+                                <select class="form-select" id="inputWork">
                                     <option selected>Seleziona il tipo di
                                         lavoro</option>
                                     <option value="1"> Backend Development</option>
@@ -89,11 +89,11 @@
                                     id="textarea" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="codicePromozionale"
+                                <label for="inputPromotionalCodes"
                                     class="form-label">Codice Promozionale
                                     (opzionale)</label>
                                 <input type="password" class="form-control"
-                                    id="codicePromozionale">
+                                    id="inputPromotionalCodes">
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input"
