@@ -64,13 +64,16 @@ estimateRequestElement.addEventListener('submit', function(event) {
     //VERIFICA 
     console.log(selectedInputWork);
 
-    if(promotionalCodes.includes(discount)){
-        selectedInputWork = (selectedInputWork * promotion).toFixed(2);
+    if(!promotionalCodes.includes(discount)){
+        alert('Il codice promozionale inserito non è valido. Il prezzo sarà calcolaro senza applicare sconti');
     }
+    else if(promotionalCodes.includes(discount)){
+        selectedInputWork = (selectedInputWork * promotion).toFixed(2);
+    } 
     //VERIFICA 
     console.log(selectedInputWork);
 
-    resultElement.innerHTML = `Final Price <br> € ${selectedInputWork}`;
+    resultElement.innerHTML = `Prezzo finale <br> € ${selectedInputWork}`;
 
 
 
