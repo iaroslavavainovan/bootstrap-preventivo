@@ -41,6 +41,9 @@ const promotion = 0.75 //sconto 25%
 //salvare in una costante l'elemento form con id estimateRequest da utilizzare nella funzione
 const estimateRequestElement = document.getElementById('estimateRequest');
 
+//salvare in una costante l'elemento contenente il risultato in pagina
+const resultElement = document.getElementById('finalPrice');
+
 
 estimateRequestElement.addEventListener('submit', function(event) {
     event.preventDefault(); //blocca refresh continuo della pagina
@@ -66,6 +69,8 @@ estimateRequestElement.addEventListener('submit', function(event) {
     }
     //VERIFICA 
     console.log(selectedInputWork);
+
+    resultElement.innerHTML = `Final Price <br> € ${selectedInputWork}`;
 
 
 
